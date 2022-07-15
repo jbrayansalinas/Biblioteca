@@ -78,6 +78,7 @@ public class SigninActivity extends AppCompatActivity {
                                     usuarios.setTelefono(Telefono);
                                     usuarios.setDireccion(Direccion);
                                     usuarios.setContrasena(Contrasena);
+                                    limpiar();
                                     long id = dbUsuarios.insertarUsuario(usuarios);
                                     if (id > 0) {
                                         Toast.makeText(SigninActivity.this, "REGISTRO GUARDADO", Toast.LENGTH_LONG).show();
@@ -106,6 +107,7 @@ public class SigninActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 verMain();
+                limpiar();
             }
         });
     }
@@ -113,5 +115,12 @@ public class SigninActivity extends AppCompatActivity {
     private void verMain() {
         Intent intent3 = new Intent(this, MainActivity.class);
         startActivity(intent3);
+    }
+    private void limpiar(){
+        txtNombre.setText("");
+        txtCorreosignin.setText("");
+        txtDireccion.setText("");
+        txtContrasena.setText("");
+        txtTelefono.setText("");
     }
 }
