@@ -58,13 +58,4 @@ public class DbAdmin extends DbHelperAdmin{
         else
             return false;
     }
-    public boolean validarAdmincreado(String correo_electronico, String contrasena) {
-        DbHelperAdmin dbHelper = new DbHelperAdmin(context);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        Cursor cursoradmin = db.rawQuery("SELECT * FROM " + TABLE_ADMIN + " WHERE " + COLUMN_ADMIN_CORREO + " =? AND " + COLUMN_ADMIN_CONTRASENA + " =?",new String[] {correo_electronico,contrasena});
-        if (cursoradmin.getCount()>0)
-            return Boolean.parseBoolean("johsAdmin");
-        else
-            return false;
-    }
 }
