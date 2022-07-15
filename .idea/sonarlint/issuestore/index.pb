@@ -21,5 +21,3 @@ v
 Fapp/src/main/java/red/lisgar/biblioteca/entidades/LibrosPrestados.java,a\e\ae666acd96aa81efa512d4c7f88ea79df1009e10
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-l
-<app/src/main/java/red/lisgar/biblioteca/entidades/Admin.java,9\b\9bf0724c5a7d2ef4dca4bcdb7838da28fec2f26d

@@ -13,6 +13,7 @@ public class DbHelperAdmin extends SQLiteOpenHelper {
     public static final String TABLE_ADMIN = "Tabla_admin";
     public static final String COLUMN_ADMIN_ID = "Id_admin";
     public static final String COLUMN_ADMIN_CORREO = "Correo_admin";
+    public static final String COLUMN_ADMIN_NOMBRE = "Nombre_admin";
     public static final String COLUMN_ADMIN_CONTRASENA = "Contrasena_admin";
     //COLUMNAS DE LA TABLA USUARIO
     public static final String TABLE_USUARIO = "Tabla_usuario";
@@ -33,6 +34,7 @@ public class DbHelperAdmin extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ADMIN + " ("+
                 COLUMN_ADMIN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_ADMIN_CORREO + " TEXT NOT NULL, " +
+                COLUMN_ADMIN_NOMBRE + " TEXT NOT NULL, " +
                 COLUMN_ADMIN_CONTRASENA + " TEXT NOT NULL)");
 
         //CREACION DE LA TABLA USUARIO

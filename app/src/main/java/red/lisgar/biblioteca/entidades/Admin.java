@@ -3,7 +3,16 @@ package red.lisgar.biblioteca.entidades;
 public class Admin {
     private int id;
     private String correo;
+    private String Nombre;
     private String pass;
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
 
     public String getPass() {
         return pass;

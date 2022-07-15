@@ -41,46 +41,47 @@ public class MainActivity extends AppCompatActivity {
         dbAdmin = new DbAdmin(this);
         btnSignin = findViewById(R.id.btnSignin);
         String CoAdmin = "johsAdmin".trim().toUpperCase();
+        String NomAdmin = "Johs".trim().toUpperCase();
         String PassAdmin = "12345".trim().toUpperCase();
-        admin.setCorreo(CoAdmin);
-        admin.setPass(PassAdmin);
-        dbAdmin.insertarAdmin(admin);
 
+        //CREA EL ADMIN
+        boolean checkadmin = dbAdmin.validarAdmin(CoAdmin, PassAdmin);
+        if (!checkadmin) {
+            admin.setCorreo(CoAdmin);
+            admin.setNombre(NomAdmin);
+            admin.setPass(PassAdmin);
+            dbAdmin.insertarAdmin(admin);
+        }
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String Correo = txtCorreo.getText().toString().trim().toUpperCase();
                 String pass = txtpass.getText().toString().trim().toUpperCase();
+                boolean checkCorreopass = dbUsuarios.entrarUsuarioContrasena(Correo, pass);
 
                 //OBLIGATORIEDAD DE CORREO Y CONTRASEÑA
-                if (TextUtils.isEmpty(Correo) || TextUtils.isEmpty(pass)) {
-                    Toast.makeText(MainActivity.this, "RELLENE TODOS LO CAMPOS", Toast.LENGTH_LONG).show();
-                } else {
-                    boolean checkadmin = dbAdmin.validarAdmin(CoAdmin, PassAdmin);
-                    //CONTRASEÑA INCORRECTA O NO EXISTE EL USUARIO
-                    boolean checkadminpass = dbAdmin.validarAdminSignin(Correo);
-                    boolean checkCorreopassval = dbUsuarios.entrarUsuarioContrasenaSignin(Correo);
-
-                    if (checkadminpass || checkCorreopassval){
-                        Toast.makeText(MainActivity.this, "CONTRASEÑA INCORRECTA", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(MainActivity.this, "EL USUARIO NO EXISTE", Toast.LENGTH_LONG).show();
-                    }
-                    //VALIDA SI EL ADMIN ESTÁ CREADO
-                    if (checkadmin) {
+                if (!TextUtils.isEmpty(Correo) || !TextUtils.isEmpty(pass)) {
                         //VALIDA SI ES ADMIN O USUARIO
-                        if (CoAdmin.equals(Correo) && PassAdmin.equals(pass)){
+                        if (CoAdmin.equals(Correo) && PassAdmin.equals(pass)) {
+                            //ES ADMIN
+                            sHarePreference.setSharedPreferences(Correo);
                             ingresarAdmin();
-                        }
-                        else{
-                            boolean checkCorreopass = dbUsuarios.entrarUsuarioContrasena(Correo, pass);
+                            limpiar();
+                            }
+                        else if (!CoAdmin.equals(Correo) && !PassAdmin.equals(pass)) {
+                            //ES USUARIO
                             if (checkCorreopass) {
                                 sHarePreference.setSharedPreferences(Correo);
                                 ingresarUsuario();
-                            }
+                                limpiar();
+                            } else {
+                                Toast.makeText(MainActivity.this, "EL USUARIO NO EXISTE", Toast.LENGTH_LONG).show();
+                              }
+                        }else {
+                            Toast.makeText(MainActivity.this, "CONTRASEÑA INCORRECTA", Toast.LENGTH_LONG).show();
                         }
-                    }
-
+                } else {
+                    Toast.makeText(MainActivity.this, "RELLENE TODOS LO CAMPOS", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 verSingin();
+                limpiar();
             }
         });
     }
@@ -103,5 +105,9 @@ public class MainActivity extends AppCompatActivity {
     private void verSingin() {
         Intent intent3 = new Intent(this, SigninActivity.class);
         startActivity(intent3);
+    }
+    private void limpiar(){
+        txtCorreo.setText("");
+        txtpass.setText("");
     }
 }

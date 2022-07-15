@@ -5,8 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.Nullable;
+import android.support.v4.util.PatternsCompat;
 
 import java.security.PublicKey;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import red.lisgar.biblioteca.entidades.Usuarios;
 import red.lisgar.biblioteca.login.SharePreference;
@@ -63,5 +66,26 @@ public class DbUsuarios extends DbHelperAdmin{
             return true;
         else
             return false;
+    }
+
+    public boolean validarEmail(String correo_electronico){
+        DbHelperAdmin dbHelper = new DbHelperAdmin(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+    if (PatternsCompat.EMAIL_ADDRESS.matcher(correo_electronico).matches()){
+        return true;
+        }else{
+        return false;
+        }
+    }
+    public boolean validarPass(final String contrasena){
+        DbHelperAdmin dbHelper = new DbHelperAdmin(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        Pattern pattern;
+        Matcher matcher;
+        final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,15}$";
+        pattern = Pattern.compile(PASSWORD_PATTERN);
+        matcher = pattern.matcher(contrasena);
+        return matcher.matches();
     }
 }
