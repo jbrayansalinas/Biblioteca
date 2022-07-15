@@ -53,34 +53,28 @@ public class MainActivity extends AppCompatActivity {
                 String pass = txtpass.getText().toString().trim().toUpperCase();
 
                 //OBLIGATORIEDAD DE CORREO Y CONTRASEÑA
-                if (TextUtils.isEmpty(Correo) || TextUtils.isEmpty(pass)) {
-                    Toast.makeText(MainActivity.this, "RELLENE TODOS LO CAMPOS", Toast.LENGTH_LONG).show();
-                } else {
-                    boolean checkadmin = dbAdmin.validarAdmin(CoAdmin, PassAdmin);
-                    //CONTRASEÑA INCORRECTA O NO EXISTE EL USUARIO
-                    boolean checkadminpass = dbAdmin.validarAdminSignin(Correo);
-                    boolean checkCorreopassval = dbUsuarios.entrarUsuarioContrasenaSignin(Correo);
-
-                    if (checkadminpass || checkCorreopassval){
-                        Toast.makeText(MainActivity.this, "CONTRASEÑA INCORRECTA", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(MainActivity.this, "EL USUARIO NO EXISTE", Toast.LENGTH_LONG).show();
-                    }
-                    //VALIDA SI EL ADMIN ESTÁ CREADO
-                    if (checkadmin) {
+                if (!TextUtils.isEmpty(Correo) || !TextUtils.isEmpty(pass)) {
+                    boolean checkadmin = dbAdmin.validarAdmin(Correo, pass);
+                    boolean checkCorreopass = dbUsuarios.entrarUsuarioContrasena(Correo, pass);
                         //VALIDA SI ES ADMIN O USUARIO
-                        if (CoAdmin.equals(Correo) && PassAdmin.equals(pass)){
-                            ingresarAdmin();
-                        }
-                        else{
-                            boolean checkCorreopass = dbUsuarios.entrarUsuarioContrasena(Correo, pass);
+                        if (CoAdmin.equals(Correo) && PassAdmin.equals(pass)) {
+                            //ES ADMIN
+                            if (checkadmin) {
+                                ingresarAdmin();
+                            }else {
+                                Toast.makeText(MainActivity.this, "EL USUARIO NO EXISTE", Toast.LENGTH_LONG).show();
+                            }
+                        }else {
+                            //ES USUARIO
                             if (checkCorreopass) {
                                 sHarePreference.setSharedPreferences(Correo);
                                 ingresarUsuario();
+                            } else{
+                                Toast.makeText(MainActivity.this, "CONTRASEÑA INCORRECTA", Toast.LENGTH_LONG).show();
                             }
-                        }
                     }
-
+                } else {
+                    Toast.makeText(MainActivity.this, "RELLENE TODOS LO CAMPOS", Toast.LENGTH_LONG).show();
                 }
             }
         });

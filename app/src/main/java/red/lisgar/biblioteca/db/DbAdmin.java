@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.Nullable;
 
 import red.lisgar.biblioteca.entidades.Admin;
-import red.lisgar.biblioteca.entidades.Usuarios;
 import red.lisgar.biblioteca.login.SharePreference;
 
 public class DbAdmin extends DbHelperAdmin{
