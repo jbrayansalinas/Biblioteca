@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Biblioteca</string>
+    <string name="iniciasesion">Iniciar Sesion</string>
+    <string name="creatucuenta">Crea Tu Cuenta</string>
+    <string name="info">Ven a leer y deja que tu imaginación pueda volar sin limites</string>
+    <string name="infosignin">Disfruta de miles de libros en la palma de tu mano</string>
+    <string name="correo">Escriba su correo</string>
+    <string name="pass">Escriba su contraseña</string>
+    <string name="nombre">Nombre Completo</string>
+    <string name="telefono">Telefono</string>
+    <string name="direccion">Dirección</string>
+    <string name="crearcuenta">No estás registrado?</string>
+    <string name="tienecuenta">Ya tienes cuenta?</string>
+    <string name="crearcuenta2">Crear cuenta</string>
+    <string name="registrarse">Registrarse</string>
+</resources>
