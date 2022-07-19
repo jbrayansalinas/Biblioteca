@@ -4,19 +4,23 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.annotation.Nullable;
-import android.support.v4.util.PatternsCompat;
+
+import androidx.annotation.Nullable;
+import androidx.core.util.PatternsCompat;
 
 import java.security.PublicKey;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import red.lisgar.biblioteca.entidades.LibrosDisponibles;
 import red.lisgar.biblioteca.entidades.Usuarios;
 import red.lisgar.biblioteca.login.SharePreference;
 
 public class DbUsuarios extends DbHelperAdmin{
     Context context;
     SharePreference sharePreference;
+    DbHelperAdmin dbHelper;
 
     public DbUsuarios(@Nullable Context context){
         super(context);
@@ -29,7 +33,7 @@ public class DbUsuarios extends DbHelperAdmin{
         long id= 0;
 
         try {
-            DbHelperAdmin dbHelper = new DbHelperAdmin(context);
+            dbHelper = new DbHelperAdmin(context);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
 
 
@@ -50,7 +54,7 @@ public class DbUsuarios extends DbHelperAdmin{
 
     }
     public boolean entrarUsuarioContrasena(String correo_electronico, String contrasena) {
-        DbHelperAdmin dbHelper = new DbHelperAdmin(context);
+        dbHelper = new DbHelperAdmin(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursorUsuario = db.rawQuery("SELECT * FROM " + TABLE_USUARIO + " WHERE " + COLUMN_USUARIO_CORREO + " =? AND " + COLUMN_USUARIO_CONTRASENA + " =?",new String[] {correo_electronico,contrasena});
         if (cursorUsuario.getCount()>0)
@@ -59,7 +63,7 @@ public class DbUsuarios extends DbHelperAdmin{
             return false;
     }
     public boolean entrarUsuarioContrasenaSignin(String correo_electronico) {
-        DbHelperAdmin dbHelper = new DbHelperAdmin(context);
+        dbHelper = new DbHelperAdmin(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursorUsuario = db.rawQuery("SELECT * FROM " + TABLE_USUARIO + " WHERE " + COLUMN_USUARIO_CORREO + " =? ",new String[] {correo_electronico});
         if (cursorUsuario.getCount()>0)
@@ -69,7 +73,7 @@ public class DbUsuarios extends DbHelperAdmin{
     }
 
     public boolean validarEmail(String correo_electronico){
-        DbHelperAdmin dbHelper = new DbHelperAdmin(context);
+        dbHelper = new DbHelperAdmin(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
     if (PatternsCompat.EMAIL_ADDRESS.matcher(correo_electronico).matches()){
         return true;
@@ -78,7 +82,7 @@ public class DbUsuarios extends DbHelperAdmin{
         }
     }
     public boolean validarPass(final String contrasena){
-        DbHelperAdmin dbHelper = new DbHelperAdmin(context);
+        dbHelper = new DbHelperAdmin(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         Pattern pattern;

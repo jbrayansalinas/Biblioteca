@@ -4,7 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import red.lisgar.biblioteca.entidades.Admin;
 import red.lisgar.biblioteca.login.SharePreference;
@@ -53,16 +54,6 @@ public class DbAdmin extends DbHelperAdmin{
         DbHelperAdmin dbHelper = new DbHelperAdmin(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursoradmin = db.rawQuery("SELECT * FROM " + TABLE_ADMIN + " WHERE " + COLUMN_ADMIN_CORREO + " =? ",new String[] {correo_electronico});
-        if (cursoradmin.getCount()>0)
-            return true;
-        else
-            return false;
-    }
-
-    public boolean validarNombre(String nombre) {
-        DbHelperAdmin dbHelper = new DbHelperAdmin(context);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        Cursor cursoradmin = db.rawQuery("SELECT * FROM " + TABLE_ADMIN + " WHERE " + COLUMN_ADMIN_NOMBRE + " =? ",new String[] {nombre});
         if (cursoradmin.getCount()>0)
             return true;
         else

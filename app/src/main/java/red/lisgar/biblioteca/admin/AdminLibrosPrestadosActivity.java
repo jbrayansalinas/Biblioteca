@@ -1,11 +1,12 @@
 package red.lisgar.biblioteca.admin;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import red.lisgar.biblioteca.R;
 import red.lisgar.biblioteca.login.SharePreference;

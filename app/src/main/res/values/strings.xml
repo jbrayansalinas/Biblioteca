@@ -26,4 +26,7 @@
     <string name="imagenLibro">Imagen del libro</string>
     <string name="descripcionLibro">Descripcion del libro</string>
     <string name="actualizarLibro">Actualizar Libro</string>
+    <string name="miLibro">Mi Libro</string>
+    <string name="prestarLibro">Prestar Libro</string>
+    <string name="misLibrosPrestados">Mis Libros Prestados</string>
 </resources>

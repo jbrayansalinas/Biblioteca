@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/black"
-    tools:context=".usuario.UsuLibrosDisponiblesActivity">
+    tools:context=".usuario.UsuPrestarLibroActivity">
     <include layout="@layout/toolbar"/>
 
     <TextView
@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
-        android:text="@string/librosDisponibles"
+        android:text="@string/prestarLibro"
         android:textColor="#CAC0C0"
         android:textSize="24sp" />
+
 </LinearLayout>

@@ -1,7 +1,6 @@
 package red.lisgar.biblioteca.admin;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import red.lisgar.biblioteca.R;
 import red.lisgar.biblioteca.db.DbLibros;
@@ -96,7 +97,7 @@ public class AdminAgregarLibroActivity extends AppCompatActivity {
                     long id = dbLibros.insertaLibro(librosDisponibles);
                     if (id > 0) {
                         Toast.makeText(AdminAgregarLibroActivity.this, "LIBRO GUARDADO", Toast.LENGTH_LONG).show();
-                        verMain();
+                        verLibrosDisponibles();
                     } else {
                         Toast.makeText(AdminAgregarLibroActivity.this, "ERROR AL GUARDAR EL LIBRO", Toast.LENGTH_LONG).show();
                     }
@@ -105,10 +106,6 @@ public class AdminAgregarLibroActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-    private void verMain() {
-        Intent intent3 = new Intent(this, MainActivity.class);
-        startActivity(intent3);
     }
     private void verLibrosDisponibles() {
         Intent intent3 = new Intent(this, AdminLibrosDisponiblesActivity.class);

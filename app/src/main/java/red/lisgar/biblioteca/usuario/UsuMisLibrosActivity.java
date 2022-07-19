@@ -1,12 +1,15 @@
 package red.lisgar.biblioteca.usuario;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import red.lisgar.biblioteca.R;
 import red.lisgar.biblioteca.admin.AdminLibrosDisponiblesActivity;
@@ -20,6 +23,7 @@ public class UsuMisLibrosActivity extends AppCompatActivity {
     ImageView btnMas;
     ImageView imgBarra;
     SharePreference sHarePreference;
+    PopupMenu popupMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +47,36 @@ public class UsuMisLibrosActivity extends AppCompatActivity {
 
             }
         });
+
+        //MENU POPUP
+        btnMas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popupMenu = new PopupMenu(UsuMisLibrosActivity.this, view);
+                popupMenu.getMenuInflater().inflate(R.menu.menu_usuario, popupMenu.getMenu());
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        switch (menuItem.getItemId()) {
+                            case R.id.salirMenu:
+                                salir();
+                                break;
+                            default:
+                                return UsuMisLibrosActivity.super.onOptionsItemSelected(menuItem);
+                        }
+                        return true;
+                    }
+                });
+                popupMenu.show();
+            }
+        });
     }
     private void verLibrosDisponibles() {
-        Intent intent3 = new Intent(this, AdminLibrosDisponiblesActivity.class);
+        Intent intent2 = new Intent(this, AdminLibrosDisponiblesActivity.class);
+        startActivity(intent2);
+    }
+    private void salir() {
+        Intent intent3 = new Intent(this, MainActivity.class);
         startActivity(intent3);
     }
 }

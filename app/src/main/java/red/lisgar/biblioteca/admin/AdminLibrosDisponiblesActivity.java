@@ -3,17 +3,17 @@ package red.lisgar.biblioteca.admin;
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -57,10 +57,11 @@ public class AdminLibrosDisponiblesActivity extends AppCompatActivity {
 
         //RECYCLEVIEW
         rvLista = findViewById(R.id.recyclerId);
-        rvLista.setLayoutManager(new GridLayoutManager(this, 2));
+        GridLayoutManager manager = new GridLayoutManager(this, 2);
+        rvLista.setLayoutManager(manager);
         dbLibros = new DbLibros(AdminLibrosDisponiblesActivity.this);
         listItem = new ArrayList<>();
-        adapter = new ListaLibrosDisponiblesAdapter(dbLibros.mostrarLibros());
+        adapter = new ListaLibrosDisponiblesAdapter(dbLibros.mostrarLibros(), AdminLibrosDisponiblesActivity.this);
         rvLista.setAdapter(adapter);
 
         //MENU POPUP

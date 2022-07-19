@@ -13,14 +13,19 @@
         <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_admin_actualizar_libro.xml" value="0.264" />
         <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_admin_agregar_libro.xml" value="0.4" />
         <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_admin_libro_historial.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_admin_libros_disponibles.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_admin_libros_disponibles.xml" value="0.1" />
         <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_admin_libros_prestados.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_signin.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_usu_mis_libros.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_usu_leer_libro.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_usu_libros_disponibles.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_usu_mi_libro.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_usu_mis_libros.xml" value="0.1940700808625337" />
+        <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_usu_prestar_libro.xml" value="0.36102564102564105" />
         <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/item_libros_disponibles.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/toolbar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/menu/menu_admin_disponibles.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/menu/menu_usuario.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Wposs/AndroidStudioProjects/Biblioteca/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.336" />
       </map>
     </option>
