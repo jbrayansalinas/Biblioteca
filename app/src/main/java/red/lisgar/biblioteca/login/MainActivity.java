@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         txtCorreo = findViewById(R.id.txtCorreo);
         txtpass = findViewById(R.id.txtpass);
-        btnEntrar = findViewById(R.id.btnEntrar);
+        btnEntrar = findViewById(R.id.btnAgregarLibro);
         sHarePreference = new SharePreference(this);
         dbUsuarios = new DbUsuarios(this);
         dbAdmin = new DbAdmin(this);
@@ -60,11 +60,11 @@ public class MainActivity extends AppCompatActivity {
                 boolean checkCorreopass = dbUsuarios.entrarUsuarioContrasena(Correo, pass);
 
                 //OBLIGATORIEDAD DE CORREO Y CONTRASEÑA
-                if (!TextUtils.isEmpty(Correo) || !TextUtils.isEmpty(pass)) {
+                if (!TextUtils.isEmpty(Correo) && !TextUtils.isEmpty(pass)) {
                         //VALIDA SI ES ADMIN O USUARIO
                         if (CoAdmin.equals(Correo) && PassAdmin.equals(pass)) {
                             //ES ADMIN
-                            sHarePreference.setSharedPreferences(Correo);
+                            sHarePreference.setSharedPreferences(NomAdmin);
                             ingresarAdmin();
                             limpiar();
                             }

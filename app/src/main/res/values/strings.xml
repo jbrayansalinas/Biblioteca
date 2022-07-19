@@ -13,4 +13,17 @@
     <string name="tienecuenta">Ya tienes cuenta?</string>
     <string name="crearcuenta2">Crear cuenta</string>
     <string name="registrarse">Registrarse</string>
+    <string name="librosDisponibles">Libros Disponibles</string>
+    <string name="Prestados">Prestados</string>
+    <string name="Agregar">Agregar</string>
+    <string name="Salir">Salir</string>
+    <string name="administrador">Administrador</string>
+    <string name="agregarLibro">Agregar Libro</string>
+    <string name="nombreLibro">Nombre del Libro</string>
+    <string name="autorLibro">Autor del Libro</string>
+    <string name="cantidadLibro">Cantidad de Libros</string>
+    <string name="urlLibro">Url del libro</string>
+    <string name="imagenLibro">Imagen del libro</string>
+    <string name="descripcionLibro">Descripcion del libro</string>
+    <string name="actualizarLibro">Actualizar Libro</string>
 </resources>

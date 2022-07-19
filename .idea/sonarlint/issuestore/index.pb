@@ -1,23 +1,15 @@
 
-Å
-Qapp/src/main/java/red/lisgar/biblioteca/admin/AdminLibrosDisponiblesActivity.java,1\2\127bf41c686c5c4e5c98468e369092c09db48057
-
-Oapp/src/main/java/red/lisgar/biblioteca/admin/AdminActualizarLibroActivity.java,0\2\02c1a6a975e994e3699844cec3f53ae705697cb9
-
-Oapp/src/main/java/red/lisgar/biblioteca/admin/AdminLibrosPrestadosActivity.java,d\4\d44a25e1be652a9c8f5d658acafbfc3ae0e0c755
 ~
 Napp/src/main/java/red/lisgar/biblioteca/admin/AdminLibroHistorialActivity.java,a\8\a86afdc3efdd5e276e751b45d45dbcdabcd0b863
-y
-Iapp/src/main/java/red/lisgar/biblioteca/usuario/UsuMisLibrosActivity.java,3\8\38288034eae56177f0054fc4d9a473ebbb1b0fb8
 Å
 Qapp/src/main/java/red/lisgar/biblioteca/usuario/UsuLibrosDisponiblesActivity.java,9\9\99163265e53cf1b62b60983cc15763afb48a0b01
 w
 Gapp/src/main/java/red/lisgar/biblioteca/usuario/UsuMiLibroActivity.java,c\4\c4b717d4b07efb6e9b276318a014fbb21a269761
 y
 Iapp/src/main/java/red/lisgar/biblioteca/usuario/UsuLeerLibroActivity.java,f\d\fdd6f39b4407465226950dfd62ebc47c83ec4fe5
-q
-Aapp/src/main/java/red/lisgar/biblioteca/db/DbLibrosPrestados.java,5\3\535b0ead06517d5587747570272cf07fa18d2ee6
+l
+<app/src/main/java/red/lisgar/biblioteca/entidades/Admin.java,9\b\9bf0724c5a7d2ef4dca4bcdb7838da28fec2f26d
+o
+?app/src/main/java/red/lisgar/biblioteca/entidades/Usuarios.java,9\f\9ffbac8e316f1798a0836a18e7476982cfbff270
 v
 Fapp/src/main/java/red/lisgar/biblioteca/entidades/LibrosPrestados.java,a\e\ae666acd96aa81efa512d4c7f88ea79df1009e10
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e

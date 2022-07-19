@@ -8,7 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Biblioteca">
+        android:theme="@style/Theme.Biblioteca_nomostrar">
+        <activity
+            android:name=".admin.AdminAgregarLibroActivity"
+            android:exported="false" />
         <activity
             android:name=".usuario.UsuLeerLibroActivity"
             android:exported="false" />
@@ -32,11 +35,12 @@
             android:exported="false" />
         <activity
             android:name=".admin.AdminLibrosDisponiblesActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Biblioteca_nomostrar" />
         <activity
             android:name=".login.SigninActivity"
             android:exported="false"
-            android:theme="@style/Theme.Biblioteca_nomostrar"/>
+            android:theme="@style/Theme.Biblioteca_nomostrar" />
         <activity
             android:name=".login.MainActivity"
             android:exported="true"

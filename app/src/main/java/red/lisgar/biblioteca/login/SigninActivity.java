@@ -55,7 +55,7 @@ public class SigninActivity extends AppCompatActivity {
                 String Contrasena = txtContrasena.getText().toString().trim().toUpperCase();
 
                 //OBLIGATORIEDAD DE TODOS LOS CAMPOS
-                if (!TextUtils.isEmpty(Correo) || !TextUtils.isEmpty(Telefono) || !TextUtils.isEmpty(Direccion) || !TextUtils.isEmpty(Contrasena)) {
+                if (!TextUtils.isEmpty(Correo) && !TextUtils.isEmpty(Telefono) && !TextUtils.isEmpty(Direccion) && !TextUtils.isEmpty(Contrasena)) {
                     //QUE NO ESTÉ CREADO
                     boolean checkadmin = dbAdmin.validarAdminSignin(Correo);
                     boolean checkCorreopass = dbUsuarios.entrarUsuarioContrasenaSignin(Correo);

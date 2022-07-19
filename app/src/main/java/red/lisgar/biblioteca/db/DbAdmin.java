@@ -58,4 +58,14 @@ public class DbAdmin extends DbHelperAdmin{
         else
             return false;
     }
+
+    public boolean validarNombre(String nombre) {
+        DbHelperAdmin dbHelper = new DbHelperAdmin(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor cursoradmin = db.rawQuery("SELECT * FROM " + TABLE_ADMIN + " WHERE " + COLUMN_ADMIN_NOMBRE + " =? ",new String[] {nombre});
+        if (cursoradmin.getCount()>0)
+            return true;
+        else
+            return false;
+    }
 }
