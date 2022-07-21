@@ -76,4 +76,54 @@ public class DbLibros extends DbHelperAdmin{
 
         return listaLibros;
     }
+
+    public LibrosDisponibles verLibro(int id){
+        dbHelper = new DbHelperAdmin((context));
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        LibrosDisponibles librosDisponibles = null;
+        Cursor cursorLibro;
+
+        cursorLibro = db.rawQuery("SELECT * FROM " + TABLE_LIBRO + " WHERE " + COLUMN_LIBRO_ID + " = '" + id+"'", null);
+
+        if (cursorLibro.moveToFirst()){
+                librosDisponibles = new LibrosDisponibles();
+                librosDisponibles.setId(cursorLibro.getInt(0));
+                librosDisponibles.setTitulo(cursorLibro.getString(1));
+                librosDisponibles.setAutor(cursorLibro.getString(2));
+                librosDisponibles.setCantidad(cursorLibro.getString(3));
+                librosDisponibles.setUrl(cursorLibro.getString(4));
+                librosDisponibles.setImgResource(cursorLibro.getString(5));
+                librosDisponibles.setDescripcion(cursorLibro.getString(6));
+        }
+        cursorLibro.close();
+
+        return librosDisponibles;
+    }
+
+    public boolean editaLibro(int id, String nombre, String autor, String cantidad, String url, String imagen, String descripcion) {
+
+        boolean correcto = false;
+        dbHelper = new DbHelperAdmin(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        try {
+            db.execSQL("UPDATE " + TABLE_LIBRO + " SET " +
+                    COLUMN_LIBRO_NOMBRE + " = '"+nombre+"', " +
+                    COLUMN_LIBRO_AUTOR + " = '"+autor+"', " +
+                    COLUMN_LIBRO_CANTIDAD + " = '"+cantidad+"', " +
+                    COLUMN_LIBRO_URL + " = '"+url+"', " +
+                    COLUMN_LIBRO_IMAGEN + " = '"+imagen+"', " +
+                    COLUMN_LIBRO_DESCRIPCION + " = '"+descripcion+"'" +
+                    " WHERE " + COLUMN_LIBRO_ID + " = '"+id+"'");
+            correcto = true;
+        } catch (Exception ex){
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+
+        return correcto;
+    }
 }

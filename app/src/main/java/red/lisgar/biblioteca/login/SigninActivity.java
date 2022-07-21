@@ -50,11 +50,11 @@ public class SigninActivity extends AppCompatActivity {
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String Nombre = txtNombre.getText().toString().trim().toUpperCase();
-                String Correo = txtCorreosignin.getText().toString().trim().toUpperCase();
-                String Telefono = txtTelefono.getText().toString().trim().toUpperCase();
-                String Direccion = txtDireccion.getText().toString().trim().toUpperCase();
-                String Contrasena = txtContrasena.getText().toString().trim().toUpperCase();
+                String Nombre = txtNombre.getText().toString().trim().toLowerCase();
+                String Correo = txtCorreosignin.getText().toString().trim().toLowerCase();
+                String Telefono = txtTelefono.getText().toString().trim().toLowerCase();
+                String Direccion = txtDireccion.getText().toString().trim().toLowerCase();
+                String Contrasena = txtContrasena.getText().toString().trim().toLowerCase();
 
                 //OBLIGATORIEDAD DE TODOS LOS CAMPOS
                 if (!TextUtils.isEmpty(Correo) && !TextUtils.isEmpty(Telefono) && !TextUtils.isEmpty(Direccion) && !TextUtils.isEmpty(Contrasena)) {
@@ -65,7 +65,7 @@ public class SigninActivity extends AppCompatActivity {
                     boolean validPass = dbUsuarios.validarPass(txtContrasena.getText().toString().trim());
                     //VALIDA DISPONIBILIDAD DE CORREO
                     if (checkadmin || checkCorreopass){
-                        Toast.makeText(SigninActivity.this, "CORREO NO DISPONIBLE", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SigninActivity.this, "Correo no disponible", Toast.LENGTH_LONG).show();
                     } else {
                         //EL TELEFONO DEBE TENER 10 CARACTERES
                         if (Telefono.length()==10) {
@@ -74,6 +74,8 @@ public class SigninActivity extends AppCompatActivity {
                                 //VALIDA LA CONTRASEÑA
                                 if (validPass){
                                     //SE REGISTRA
+                                    sHarePreference.setSharedPreferences(Nombre);
+                                    sHarePreference.setSharedPreferences(Correo);
                                     dbUsuarios = new DbUsuarios(SigninActivity.this);
                                     usuarios.setNombre(Nombre);
                                     usuarios.setCorreo(Correo);
@@ -83,24 +85,24 @@ public class SigninActivity extends AppCompatActivity {
                                     limpiar();
                                     long id = dbUsuarios.insertarUsuario(usuarios);
                                     if (id > 0) {
-                                        Toast.makeText(SigninActivity.this, "REGISTRO GUARDADO", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(SigninActivity.this, "Registro guardado", Toast.LENGTH_LONG).show();
                                         verMain();
                                     } else {
-                                        Toast.makeText(SigninActivity.this, "ERROR AL GUARDAR EL REGISTRO", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(SigninActivity.this, "Error al guardar el registro", Toast.LENGTH_LONG).show();
                                     }
                                 }else {
-                                    Toast.makeText(SigninActivity.this, "DEBE SER ALFANUMÉRICA, INCLUIR CARACTERES ESPECIALES, UN RANGO DE MÍNIMO 8 Y MÁXIMO 15", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(SigninActivity.this, "Debe ser alfanumérica, incluir caracteres especiales, un rango de mínimo 8 y máximo 15", Toast.LENGTH_LONG).show();
                                 }
                             } else {
-                                Toast.makeText(SigninActivity.this, "DEBE TENER FORMATO DE CORREO", Toast.LENGTH_LONG).show();
+                                Toast.makeText(SigninActivity.this, "Debe tener formato de correo", Toast.LENGTH_LONG).show();
                             }
                             } else{
-                            Toast.makeText(SigninActivity.this, "EL TELEFONO DEBE TENER 10 CARACTERES", Toast.LENGTH_LONG).show();
+                            Toast.makeText(SigninActivity.this, "El telefono debe tener 10 caracteres", Toast.LENGTH_LONG).show();
 
                         }
                     }
                 } else {
-                    Toast.makeText(SigninActivity.this, "RELLENE TODOS LO CAMPOS", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SigninActivity.this, "Rellene todos lo campos", Toast.LENGTH_LONG).show();
                 }
             }
         });

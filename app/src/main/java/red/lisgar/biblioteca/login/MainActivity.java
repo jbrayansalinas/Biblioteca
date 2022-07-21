@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
         dbUsuarios = new DbUsuarios(this);
         dbAdmin = new DbAdmin(this);
         btnSignin = findViewById(R.id.btnSignin);
-        String CoAdmin = "johsAdmin".trim().toUpperCase();
-        String NomAdmin = "Johs".trim().toUpperCase();
-        String PassAdmin = "12345".trim().toUpperCase();
+        String CoAdmin = "johsAdmin".trim().toLowerCase();
+        String NomAdmin = "Johs".trim();
+        String PassAdmin = "12345".trim().toLowerCase();
 
         //CREA EL ADMIN
         boolean checkadmin = dbAdmin.validarAdmin(CoAdmin, PassAdmin);
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String Correo = txtCorreo.getText().toString().trim().toUpperCase();
-                String pass = txtpass.getText().toString().trim().toUpperCase();
+                String Correo = txtCorreo.getText().toString().trim().toLowerCase();
+                String pass = txtpass.getText().toString().trim().toLowerCase();
                 boolean checkCorreopass = dbUsuarios.entrarUsuarioContrasena(Correo, pass);
 
                 //OBLIGATORIEDAD DE CORREO Y CONTRASEÑA
@@ -72,17 +72,16 @@ public class MainActivity extends AppCompatActivity {
                         else if (!CoAdmin.equals(Correo) && !PassAdmin.equals(pass)) {
                             //ES USUARIO
                             if (checkCorreopass) {
-                                sHarePreference.setSharedPreferences(Correo);
                                 ingresarUsuario();
                                 limpiar();
                             } else {
-                                Toast.makeText(MainActivity.this, "EL USUARIO NO EXISTE", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, "El usuario no existe", Toast.LENGTH_LONG).show();
                               }
                         }else {
-                            Toast.makeText(MainActivity.this, "CONTRASEÑA INCORRECTA", Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "Contraseña incorrecta", Toast.LENGTH_LONG).show();
                         }
                 } else {
-                    Toast.makeText(MainActivity.this, "RELLENE TODOS LO CAMPOS", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Rellene todos lo campos", Toast.LENGTH_LONG).show();
                 }
             }
         });

@@ -1,0 +1,13 @@
+
+^
+java:S11260"AReplace this if-then-else statement by a single return statement.(úˆ›Ø8æäï 0
+^
+java:S11269"AReplace this if-then-else statement by a single return statement.(úˆ›Ø8éäï 0
+r	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°áùÿÿÿÿ8ıäï 0
+m	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ğ†Ğ8şäï 0
+h
+java:S2095-"KUse try-with-resources or close this "DbHelperAdmin" in a "finally" clause.(Š­àÁ8õ¯ÿÃ¡0
+h
+java:S2095"KUse try-with-resources or close this "DbHelperAdmin" in a "finally" clause.(ÊµïÀ8õ¯ÿÃ¡0
+h
+java:S20956"KUse try-with-resources or close this "DbHelperAdmin" in a "finally" clause.(Š­àÁ8õ¯ÿÃ¡0

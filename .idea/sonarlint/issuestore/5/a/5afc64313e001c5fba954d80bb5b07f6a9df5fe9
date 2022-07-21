@@ -1,0 +1,26 @@
+
+k	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×õ›„şÿÿÿÿ
+k	java:S117A"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œú¸Öüÿÿÿÿ
+f	java:S117K"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î£û
+\
+java:S1126<"AReplace this if-then-else statement by a single return statement.(º×öòùÿÿÿÿ
+\
+java:S1126E"AReplace this if-then-else statement by a single return statement.(º×öòùÿÿÿÿ
+L
+java:S1854M"6Remove this useless assignment to local variable "db".(¼Í’
+=
+java:S1481M"'Remove this unused "db" local variable.(¼Í’
+W
+java:S1126N"AReplace this if-then-else statement by a single return statement.(Ö¦×è
+L
+java:S1854V"6Remove this useless assignment to local variable "db".(¼Í’
+=
+java:S1481V"'Remove this unused "db" local variable.(¼Í’
+^
+java:S6353Z"<Use concise character class syntax '\\d' instead of '[0-9]'.(âî²ıÿÿÿÿ8ë­‰¢0
+V
+java:S1128"4Remove this unused import 'java.security.PublicKey'.(ºâú½üÿÿÿÿ8è°ÿÃ¡0
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8é°ÿÃ¡0
+p
+java:S1128"NRemove this unused import 'red.lisgar.biblioteca.entidades.LibrosDisponibles'.(Ô›Ğöşÿÿÿÿ8é°ÿÃ¡0

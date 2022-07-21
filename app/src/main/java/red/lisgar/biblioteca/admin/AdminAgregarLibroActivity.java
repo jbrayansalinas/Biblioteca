@@ -49,7 +49,7 @@ public class AdminAgregarLibroActivity extends AppCompatActivity {
         nombreAgregarLibro = findViewById(R.id.nombreAgregarLibro);
         autorAgregarLibro = findViewById(R.id.autorAgregarLibro);
         cantidadAgregarLibro = findViewById(R.id.cantidadAgregarLibro);
-        urlAgregarLibro = findViewById(R.id.nombreAgregarLibro);
+        urlAgregarLibro = findViewById(R.id.urlAgregarLibro);
         imagenAgregarLibro = findViewById(R.id.imagenAgregarLibro);
         descripcionAgregarLibro = findViewById(R.id.descripcionAgregarLibro);
 
@@ -76,12 +76,12 @@ public class AdminAgregarLibroActivity extends AppCompatActivity {
         btnAgregarLibro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String Nombre = nombreAgregarLibro.getText().toString().trim().toUpperCase();
-                String autor = autorAgregarLibro.getText().toString().trim().toUpperCase();
-                String cantidad = cantidadAgregarLibro.getText().toString().trim().toUpperCase();
-                String url = urlAgregarLibro.getText().toString().trim().toUpperCase();
-                String imagen = imagenAgregarLibro.getText().toString().trim().toUpperCase();
-                String descripcion = descripcionAgregarLibro.getText().toString().trim().toUpperCase();
+                String Nombre = nombreAgregarLibro.getText().toString().trim();
+                String autor = autorAgregarLibro.getText().toString().trim();
+                String cantidad = cantidadAgregarLibro.getText().toString().trim();
+                String url = urlAgregarLibro.getText().toString().trim();
+                String imagen = imagenAgregarLibro.getText().toString().trim();
+                String descripcion = descripcionAgregarLibro.getText().toString().trim();
 
                 //OBLIGATORIEDAD DE TODOS LOS CAMPOS
                 if (!TextUtils.isEmpty(Nombre) && !TextUtils.isEmpty(autor) && !TextUtils.isEmpty(cantidad) && !TextUtils.isEmpty(url) && !TextUtils.isEmpty(imagen) && !TextUtils.isEmpty(descripcion)) {
